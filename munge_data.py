@@ -83,4 +83,4 @@ alt_cat = alt_util.mark_line().encode(
 
 final = alt.vconcat(alt_gantt_layered, alt_util, alt_cat).resolve_scale("independent")
 
-final.savechart("mychart.html", validate=False)
+final.savechart("index.html", validate=False)
