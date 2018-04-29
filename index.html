@@ -1,0 +1,2120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script type="text/javascript">
+    var spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "config": {
+    "view": {
+      "height": 300,
+      "width": 400
+    }
+  },
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "vconcat": [
+    {
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "category": "Programming",
+                "desc": "Description of task 1",
+                "end": "2018-11-30",
+                "num_fte": 0.21021021021021022,
+                "person": "Robin",
+                "priority": 1,
+                "start": "2018-01-01",
+                "task": "01 Task 1",
+                "task_id": 1,
+                "weeks_work": 10
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 2",
+                "end": "2019-05-31",
+                "num_fte": 0.6635071090047393,
+                "person": "Robin",
+                "priority": 3,
+                "start": "2018-11-01",
+                "task": "02 Task 2",
+                "task_id": 2,
+                "weeks_work": 20
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 3",
+                "end": "2018-08-31",
+                "num_fte": 0.6635071090047393,
+                "person": "James",
+                "priority": 2,
+                "start": "2018-02-01",
+                "task": "03 Task 3",
+                "task_id": 3,
+                "weeks_work": 20
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 4",
+                "end": "2018-04-30",
+                "num_fte": -0.14227642276422764,
+                "person": "John",
+                "priority": 1,
+                "start": "2019-01-01",
+                "task": "04 Task 4",
+                "task_id": 4,
+                "weeks_work": 5
+              }
+            ]
+          },
+          "encoding": {
+            "color": {
+              "field": "person",
+              "legend": {
+                "orient": "right"
+              },
+              "type": "nominal"
+            },
+            "opacity": {
+              "field": "num_fte",
+              "legend": false,
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "person"
+              },
+              {
+                "field": "num_fte",
+                "format": ".2f"
+              }
+            ],
+            "x": {
+              "field": "start",
+              "scale": {
+                "domain": [
+                  {
+                    "month": 1,
+                    "year": 2018
+                  },
+                  {
+                    "month": 1,
+                    "year": 2020
+                  }
+                ]
+              },
+              "type": "temporal"
+            },
+            "x2": {
+              "field": "end",
+              "type": "temporal"
+            },
+            "y": {
+              "field": "task",
+              "scale": {
+                "padding": 0.3
+              },
+              "type": "nominal"
+            }
+          },
+          "mark": "bar",
+          "width": 500
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "category": "Programming",
+                "desc": "Description of task 1",
+                "end": "2018-11-30",
+                "num_fte": 0.21021021021021022,
+                "person": "Robin",
+                "priority": 1,
+                "start": "2018-01-01",
+                "task": "01 Task 1",
+                "task_id": 1,
+                "weeks_work": 10
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 2",
+                "end": "2019-05-31",
+                "num_fte": 0.6635071090047393,
+                "person": "Robin",
+                "priority": 3,
+                "start": "2018-11-01",
+                "task": "02 Task 2",
+                "task_id": 2,
+                "weeks_work": 20
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 3",
+                "end": "2018-08-31",
+                "num_fte": 0.6635071090047393,
+                "person": "James",
+                "priority": 2,
+                "start": "2018-02-01",
+                "task": "03 Task 3",
+                "task_id": 3,
+                "weeks_work": 20
+              },
+              {
+                "category": "Documentation",
+                "desc": "Description of task 4",
+                "end": "2018-04-30",
+                "num_fte": -0.14227642276422764,
+                "person": "John",
+                "priority": 1,
+                "start": "2019-01-01",
+                "task": "04 Task 4",
+                "task_id": 4,
+                "weeks_work": 5
+              }
+            ]
+          },
+          "encoding": {
+            "text": {
+              "field": "desc",
+              "type": "nominal"
+            },
+            "tooltip": [
+              {
+                "field": "person"
+              },
+              {
+                "field": "num_fte",
+                "format": ".2f"
+              }
+            ],
+            "x": {
+              "field": "start",
+              "scale": {
+                "domain": [
+                  {
+                    "month": 1,
+                    "year": 2018
+                  },
+                  {
+                    "month": 1,
+                    "year": 2020
+                  }
+                ]
+              },
+              "type": "temporal"
+            },
+            "x2": {
+              "field": "end",
+              "type": "temporal"
+            },
+            "y": {
+              "field": "task",
+              "scale": {
+                "padding": 0.3
+              },
+              "type": "nominal"
+            }
+          },
+          "mark": {
+            "align": "left",
+            "baseline": "middle",
+            "dx": 4,
+            "dy": 0,
+            "type": "text"
+          },
+          "width": 500
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "dead_desc": "Deadline 1",
+                "mark": "\u2757\ufe0f",
+                "person": "Robin",
+                "start": "2018-12-01",
+                "task_o": "01 Task 1"
+              },
+              {
+                "dead_desc": "Deadline 2",
+                "mark": "\u2757\ufe0f",
+                "person": "Robin",
+                "start": "2019-06-01",
+                "task_o": "02 Task 2"
+              }
+            ]
+          },
+          "encoding": {
+            "text": {
+              "field": "mark",
+              "type": "nominal"
+            },
+            "tooltip": [
+              {
+                "field": "dead_desc"
+              }
+            ],
+            "x": {
+              "field": "start",
+              "scale": {
+                "domain": [
+                  {
+                    "month": 1,
+                    "year": 2018
+                  },
+                  {
+                    "month": 1,
+                    "year": 2020
+                  }
+                ]
+              },
+              "type": "temporal"
+            },
+            "y": {
+              "field": "task_o",
+              "type": "nominal"
+            }
+          },
+          "mark": {
+            "align": "center",
+            "baseline": "middle",
+            "size": 20,
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "category": "Programming",
+            "date": "2018-01-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-01-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-02-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-02-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-03-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-03-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-04-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-04-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-05-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-05-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-06-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-06-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-07-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-07-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-08-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-08-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-09-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-09-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-10-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-10-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-11-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-11-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-02-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-02-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-03-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-03-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-04-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-04-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-05-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-05-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-02-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-02-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-03-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-03-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-04-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-04-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-09-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-09-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-10-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-10-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          }
+        ]
+      },
+      "encoding": {
+        "color": {
+          "field": "person",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "date",
+          "scale": {
+            "domain": [
+              {
+                "month": 1,
+                "year": 2018
+              },
+              {
+                "month": 1,
+                "year": 2020
+              }
+            ]
+          },
+          "type": "temporal"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "num_fte",
+          "type": "quantitative"
+        }
+      },
+      "height": 100,
+      "mark": {
+        "interpolate": "monotone",
+        "type": "area"
+      },
+      "width": 500
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "category": "Programming",
+            "date": "2018-01-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-01-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-02-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-02-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-03-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-03-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-04-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-04-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-05-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-05-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-06-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-06-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-07-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-07-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-08-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-08-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-09-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-09-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-10-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-10-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-11-01",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Programming",
+            "date": "2018-11-16",
+            "desc": "Description of task 1",
+            "end": "2018-11-30",
+            "num_fte": 0.21021021021021022,
+            "person": "Robin",
+            "priority": 1,
+            "start": "2018-01-01",
+            "task": "01 Task 1",
+            "task_id": 1,
+            "weeks_work": 10
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-02-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-02-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-03-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-03-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-04-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-04-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-05-01",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-05-16",
+            "desc": "Description of task 2",
+            "end": "2019-05-31",
+            "num_fte": 0.6635071090047393,
+            "person": "Robin",
+            "priority": 3,
+            "start": "2018-11-01",
+            "task": "02 Task 2",
+            "task_id": 2,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-02-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-02-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-03-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-03-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-04-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-04-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-01",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-16",
+            "desc": "Description of task 3",
+            "end": "2018-08-31",
+            "num_fte": 0.6635071090047393,
+            "person": "James",
+            "priority": 2,
+            "start": "2018-02-01",
+            "task": "03 Task 3",
+            "task_id": 3,
+            "weeks_work": 20
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-05-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-06-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-07-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-08-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-09-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-09-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-10-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-10-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-11-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2018-12-16",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          },
+          {
+            "category": "Documentation",
+            "date": "2019-01-01",
+            "desc": "Description of task 4",
+            "end": "2018-04-30",
+            "num_fte": -0.14227642276422764,
+            "person": "John",
+            "priority": 1,
+            "start": "2019-01-01",
+            "task": "04 Task 4",
+            "task_id": 4,
+            "weeks_work": 5
+          }
+        ]
+      },
+      "encoding": {
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "date",
+          "scale": {
+            "domain": [
+              {
+                "month": 1,
+                "year": 2018
+              },
+              {
+                "month": 1,
+                "year": 2020
+              }
+            ]
+          },
+          "type": "temporal"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "num_fte",
+          "type": "quantitative"
+        }
+      },
+      "height": 100,
+      "mark": "line",
+      "width": 500
+    }
+  ]
+};
+    var opt = {"renderer": "canvas", "actions": false};
+    vegaEmbed("#vis", spec, opt);
+  </script>
+</body>
+</html>
