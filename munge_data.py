@@ -1,7 +1,14 @@
 import pandas as pd
 import altair as alt
+from datetime import datetime
+
 
 CHART_WIDTH = 500
+START_YEAR = 2018
+START_MONTH = 1
+
+END_YEAR = 2020
+END_MONTH = 1
 
 gd = pd.read_csv("gantt.csv", parse_dates=["start", "end"])
 gd["end"] = gd["end"] - pd.DateOffset(1)
@@ -24,8 +31,8 @@ final = final[f1 | f2]
 dead = pd.read_csv("deadlines.csv")
 
 # Set up common x axis
-dt1 = alt.DateTime(year=2018, month=4)
-dt2 = alt.DateTime(year=2019, month=10)
+dt1 = alt.DateTime(year=START_YEAR, month=START_MONTH)
+dt2 = alt.DateTime(year=END_YEAR, month=END_MONTH)
 x_scale=alt.Scale(domain=(dt1,dt2))
 tt = [{"field": "person"}, {"field":"num_fte", "format": ".2f"}]
 
