@@ -2,12 +2,13 @@ import pandas as pd
 import altair as alt
 
 CHART_WIDTH = 700
+downsample_skip_days = 7
 
 def resample_and_add_zeros(df):
     task_id = df.iloc[0,0]
     data = {"task_id" : [task_id], "num_fte": [0], "weeks_work":[0]}
-    before = pd.DataFrame(data, index = [df.index[0] - pd.DateOffset(1)])
-    after = pd.DataFrame(data, index = [df.index[1] + pd.DateOffset(1)])
+    before = pd.DataFrame(data, index = [df.index[0] - pd.DateOffset(downsample_skip_days)])
+    after = pd.DataFrame(data, index = [df.index[1] + pd.DateOffset(downsample_skip_days)])
     df = pd.concat([before,df,after])
     return df.resample('D').fillna(method='pad')
 
@@ -40,7 +41,8 @@ del merge_gd["num_fte"]
 
 final = fact_table.merge(merge_gd, right_on='task_id', left_on='task_id', how='left')
 
-f1 = final["date"].dt.day % 5 == 0
+# Downsample
+f1 = final["date"].dt.day % downsample_skip_days == 0
 final = final[f1]
 
 dead = pd.read_csv("deadlines.csv")
