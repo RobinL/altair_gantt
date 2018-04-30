@@ -48,8 +48,8 @@ final = final[f1]
 dead = pd.read_csv("deadlines.csv")
 
 # Set up common x axis
-dt1 = alt.DateTime(year=2018, month=4)
-dt2 = alt.DateTime(year=2019, month=10)
+dt1 = alt.DateTime(year=2017, month=12)
+dt2 = alt.DateTime(year=2019, month=12)
 x_scale=alt.Scale(domain=(dt1,dt2))
 tt = [{"field": "person"}, {"field":"num_fte", "format": ".2f"}]
 no_axis_title = axis=alt.Axis(title="")
